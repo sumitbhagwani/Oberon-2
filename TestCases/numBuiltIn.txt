@@ -1,0 +1,34 @@
+(* Tests the builtins INC, DEC, ABS
+Expected output:
+	6 
+	5 
+	10 
+	13 
+	96.00000000 
+*)
+
+MODULE input; 
+IMPORT Out;
+VAR a,day2:INTEGER; day3:REAL;
+CONST al=2;
+
+
+BEGIN
+
+	day2 := 5;
+	INC(day2);
+	Out.Int(day2);
+
+	DEC(day2);
+	Out.Int(day2);
+
+	INC(day2, 5);
+	Out.Int(day2);
+
+	DEC(day2, -3);
+	Out.Int(day2);
+
+	INC(day3, -96);
+	Out.Real(ABS(day3));
+
+END input.

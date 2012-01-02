@@ -1,0 +1,32 @@
+(*Tests nested procedures.
+Expected output: 27 *)
+
+MODULE nested; 
+IMPORT Out, In;
+VAR day2:INTEGER; day3:REAL;
+
+PROCEDURE add1(n:INTEGER):INTEGER;
+
+	PROCEDURE square(a1:INTEGER):INTEGER;
+
+	BEGIN
+		RETURN a1*a1;
+	END square;
+
+	PROCEDURE cube(a2:INTEGER):INTEGER;
+
+	BEGIN
+		RETURN a2*square(a2);
+	END cube;
+
+BEGIN	
+	RETURN cube(n);
+END add1;
+
+
+BEGIN
+
+	day2:=add1(3);
+	
+	Out.Int(day2);
+END nested.

@@ -1,0 +1,33 @@
+(* Tests recursion using fibonacci function.
+Expected output: day2 th fibonacci number *)
+
+MODULE input; 
+IMPORT Out, In;
+VAR day2:INTEGER; day3:REAL;
+
+PROCEDURE fib(n:INTEGER):INTEGER;
+
+	VAR a, b:INTEGER;
+BEGIN
+	(*Out.Int(n);*)
+	IF(n>2)
+	THEN
+		a := fib(n-1);
+		b := fib(n-2);
+		RETURN a+b;
+	ELSE
+		a := 1;
+		RETURN 1;
+	END;
+END fib;
+
+BEGIN
+
+	Out.String("Please enter a positive integer: ");
+	READINT(day2);
+	
+	day2 := fib(day2);
+	
+	Out.Int(day2);
+
+END input.

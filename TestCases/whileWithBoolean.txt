@@ -1,0 +1,21 @@
+(* Tests the BOOLEAN expressions.
+Expected output: Infinite loop printing 59 (the value of day2) *)
+
+MODULE input; 
+IMPORT Out;
+VAR a,day2:INTEGER; day3:REAL; j, k:BOOLEAN; f:CHAR; b:ARRAY 10 OF INTEGER;
+CONST al=2;
+
+
+BEGIN
+
+	day2 := 1;
+	k:= FALSE;
+	b[0] := 59;
+	day2 := b[0];
+
+	WHILE(TRUE & (2<3) & ~~~FALSE & ~k) DO
+		Out.Int(day2);
+	END;
+
+END input.

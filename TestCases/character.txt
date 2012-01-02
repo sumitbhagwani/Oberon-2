@@ -1,0 +1,39 @@
+(* Tests the working of CHR, ORD, CAP modules.
+Expected output: 
+	a 
+	t 
+	B 
+	2 
+	E 
+	66 
+	t 
+	T 
+*)
+
+MODULE input; 
+IMPORT Out;
+VAR a,day2:INTEGER; day3:REAL; f:CHAR;
+CONST al=2;
+
+
+BEGIN
+
+f := 'a';
+Out.Char(f);
+Out.Char('t');
+
+f := CHR(66);
+Out.Char(f);
+
+a:= al;
+Out.Int(a);
+Out.Char(CHR(69));
+
+a := ORD(f);
+Out.Int(a);
+
+f := 't';
+Out.Char(f);
+Out.Char(CAP(f));
+
+END input.

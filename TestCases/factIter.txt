@@ -1,0 +1,22 @@
+(* Tests the FOR loop.
+Expected output: Factorial of the given number *)
+
+MODULE input; 
+IMPORT Out, In;
+VAR a,day2, day4:INTEGER; day3:REAL;
+
+
+BEGIN
+
+day2 := 1;
+
+Out.String("Please enter a positive integer: ");
+READINT(day4);
+
+FOR a := 1 TO day4 BY +1 DO
+	day2 := day2*a;
+END;
+
+Out.Int(day2);
+
+END input.

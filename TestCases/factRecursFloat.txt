@@ -1,0 +1,31 @@
+(* Tests recursion and handling of floating point variables in procedure calls.
+Expected output: Factorial of the given number *)
+
+MODULE input; 
+IMPORT Out, In;
+VAR day2:INTEGER; day3:REAL;
+
+PROCEDURE fact(n:REAL):REAL;
+
+	VAR a, b:REAL;
+BEGIN
+	IF(n>1)
+	THEN
+		a := fact(n-1);
+		RETURN b;
+	ELSE
+		a := 1;
+		RETURN a;
+	END;
+END fact;
+
+BEGIN
+
+	Out.String("Please enter a positive integer: ");
+	READREAL(day3);
+	
+	day3 := fact(day3);
+	
+	Out.Real(day3);
+
+END input.

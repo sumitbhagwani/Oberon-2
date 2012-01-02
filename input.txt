@@ -1,0 +1,34 @@
+(* Tests the modules INC, DEC, READINT
+Expected Output:
+	6 
+	5 
+	10 
+	13 
+	96.00000000 
+*)
+
+MODULE xyz; 
+IMPORT Out, In;
+VAR a,day2:INTEGER; day3:REAL;j:CHAR;
+CONST al=2;
+
+
+BEGIN
+
+	day2 := 5;
+	INC(day2);
+	Out.Int(day2);
+
+	DEC(day2);
+	Out.Int(day2);
+
+	INC(day2, 5);
+	Out.Int(day2);
+
+	DEC(day2, -3);
+	Out.Int(day2);
+
+	INC(day3, -96);
+	Out.Real(ABS(day3));
+
+END xyz.

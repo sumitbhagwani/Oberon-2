@@ -1,0 +1,29 @@
+(* Tests recursion.
+Expected output: factorial of the given number *)
+
+MODULE input; 
+IMPORT Out, In;
+VAR day2:INTEGER; day3:REAL;
+
+PROCEDURE fact(n:INTEGER):INTEGER;
+
+	VAR a, b:INTEGER;
+BEGIN
+	IF(n>1)
+	THEN
+		RETURN fact(n-1)*n;
+	ELSE
+		RETURN 1;
+	END;
+END fact;
+
+BEGIN
+
+	Out.String("Please enter a positive integer: ");
+	READINT(day2);
+	
+	day2 := fact(day2);
+	
+	Out.Int(day2);
+
+END input.

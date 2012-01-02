@@ -1,0 +1,56 @@
+(* Tests the Out module and also the pass by value property
+Expected output:
+
+	old value of day2 
+	0 
+	new value of day2 
+	3 
+	old value of day3 
+	0.00000000 
+	new value of day3 
+	3.00000000 
+	Before func call a is:  
+	2 
+	In the function: Old value of a 
+	2 
+	In the function: New value of a 
+	3 
+	After func call a is : 
+	2
+*)
+
+MODULE input; 
+IMPORT x:=Out;
+
+VAR a,day2:INTEGER; day3:REAL; j:BOOLEAN; 
+CONST c=1; b=5;
+PROCEDURE add1(VAR a:INTEGER);
+BEGIN
+	x.String("In the function: Old value of a");
+	x.Int(a);
+	a:= a+1;
+	x.String("In the function: New value of a");
+	x.Int(a);
+	RETURN a;
+END add1;
+
+BEGIN
+	x.String("old value of day2");
+	x.Int(day2);
+	day2 := 3;
+	x.String("new value of day2");
+	x.Int(day2);
+	x.String("old value of day3");
+	x.Real(day3);
+	day3 := day2;
+
+	x.String("new value of day3");
+	x.Real(day3);
+
+	a:=2;
+	x.String("Before func call a is: ");
+	x.Int(a);
+	add1(a);
+	x.String("After func call a is :");
+	x.Int(a);
+END input.

@@ -1,0 +1,28 @@
+The extracted folder should contain the following (6 files and 1 folder)
+	A folder by the name TestCases containing 14 files
+	CodeGenerator.py
+	Group15_Declaration.pdf
+	Group15_Prsentation.pdf
+	Group15_Specification.pdf
+	input.txt
+	Phase1.py
+	readMe.txt
+	
+	Phase1.py contains the lexer, parser and the code for intermediate code generation
+	CodeGenerator.py, as the name suggests generates the MIPS code from the intermediate code
+	input.txt is the default input file
+
+To run the oberon file use the folowing commands
+	cd into the directory containing CodeGenerator.py
+	Copy the input file (say fileName.txt) into the same folder as above and type the following command
+	python CodeGenerator.py fileName.txt
+	
+By default, CodeGenerator assumes input.txt as the input file
+
+	On running the above python command, two options occur if the user wishes to print the intermediate code and other debugging information.
+	If the user inputs y, they are also printed.
+	The Intermediate code can be easily understood by the user, but other debugging information is very hard to make sense of.
+	
+	A MIPS file "new.asm" will be genertaed in the same folder. This can be run with any MIPS simulator.
+	
+A few test cases are provided along with the code. Their expected working has been explained in the respective files.

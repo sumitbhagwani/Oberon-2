@@ -1,0 +1,21 @@
+(* Tests BOOLEAN variables as predicates.
+Expected output: Repeatedly asks to input 1 until user inputs 1 *)
+
+MODULE input; 
+IMPORT Out,In;
+VAR a,day2:INTEGER; day3:REAL; j, k:BOOLEAN;
+
+
+
+BEGIN
+
+k:= TRUE;
+WHILE(k) DO
+	Out.String("Input 1!");
+	READINT(a);
+	k:= a=1;
+	k:= ~ k;
+END;
+
+
+END input.

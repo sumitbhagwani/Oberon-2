@@ -1,0 +1,20 @@
+(* Tests array handling. Assignment to an array and using the values filled.
+Expected output: sum of squares of first nine natural numbers. *)
+
+MODULE input; 
+IMPORT Out;
+VAR a,day2:INTEGER; day3:REAL; f:CHAR; arr:ARRAY 10 OF INTEGER;
+CONST al=2;
+
+
+BEGIN
+
+FOR a:= 0 TO 9
+DO
+	arr[a] := a;
+	day2 := day2 + arr[a]*arr[a];
+END;
+
+Out.Int(day2);
+
+END input.

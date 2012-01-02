@@ -1,0 +1,28 @@
+(* Tests WHILE loop.
+Expected output: day4 th fibonacci number *)
+
+MODULE input; 
+IMPORT Out, In;
+VAR a, fib0, day2, buff, day4:INTEGER; day3:REAL;
+
+
+BEGIN
+
+	fib0 := 0;
+	day2 := 1;
+
+	Out.String("Please enter a positive integer: ");
+
+	READINT(day4);
+
+	a := 1;
+
+	WHILE(a<day4) DO
+		buff := day2;
+		day2 := day2 + fib0;
+		fib0 := buff;
+		a := a+1;
+	END;
+
+	Out.Int(day2);
+END input.

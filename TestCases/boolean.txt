@@ -1,0 +1,16 @@
+(* Tests the working of boolean operators.
+Expected output: 5 *)
+
+MODULE input; 
+IMPORT Out, In;
+VAR day2, day4:INTEGER; day3:REAL; j, k:BOOLEAN;
+
+BEGIN
+
+	day2 := 8;
+	j := day2 = 5;
+	k := day2 = 8;
+	IF( j OR k) THEN day2 := 5; ELSE day2 := 15; END;
+	
+	Out.Int(day2);
+END input.
